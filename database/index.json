@@ -1,0 +1,180 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "createdAt": "2021-02-06T18:30:57.479Z",
+      "name": "Abbey Howe",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hasslunsford/128.jpg"
+    },
+    {
+      "id": "2",
+      "createdAt": "2021-02-06T12:45:17.283Z",
+      "name": "Kyla Balistreri",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/aaronalfred/128.jpg"
+    },
+    {
+      "id": "3",
+      "createdAt": "2021-02-06T18:56:16.684Z",
+      "name": "Zachariah Lebsack",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/yalozhkin/128.jpg"
+    },
+    {
+      "id": "4",
+      "createdAt": "2021-02-06T15:30:24.161Z",
+      "name": "Ryleigh Powlowski",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dgajjar/128.jpg"
+    },
+    {
+      "id": "5",
+      "createdAt": "2021-02-06T20:53:27.474Z",
+      "name": "Enid Ruecker",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/Shriiiiimp/128.jpg"
+    },
+    {
+      "id": "6",
+      "createdAt": "2021-02-06T14:09:07.467Z",
+      "name": "Benny Metz",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nandini_m/128.jpg"
+    },
+    {
+      "id": "7",
+      "createdAt": "2021-02-06T15:33:39.554Z",
+      "name": "Friedrich Runolfsson III",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mhaligowski/128.jpg"
+    },
+    {
+      "id": "8",
+      "createdAt": "2021-02-06T14:40:54.557Z",
+      "name": "Antonina Blanda",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mkginfo/128.jpg"
+    },
+    {
+      "id": "9",
+      "createdAt": "2021-02-06T21:42:23.045Z",
+      "name": "Liliane Friesen",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/joki4/128.jpg"
+    },
+    {
+      "id": "10",
+      "createdAt": "2021-02-07T12:13:19.029Z",
+      "name": "Eliane Olson",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/michaelabehsera/128.jpg"
+    }
+  ],
+  "boards": [
+    {
+      "id": "MAIN",
+      "title": "Main Board",
+      "sections": [
+        {
+          "id": "BACKLOG",
+          "title": "Backlog"
+        },
+        {
+          "id": "OPEN",
+          "title": "Open"
+        },
+        {
+          "id": "IN_PROGRESS",
+          "title": "In Progress"
+        },
+        {
+          "id": "DONE",
+          "title": "Done"
+        },
+        {
+          "id": "CLOSED",
+          "title": "Closed"
+        }
+      ]
+    },
+    {
+      "id": "DEVELOPMENT",
+      "title": "Development Board",
+      "sections": [
+        {
+          "id": "BACKLOG",
+          "title": "Backlog"
+        },
+        {
+          "id": "OPEN",
+          "title": "Open"
+        },
+        {
+          "id": "IN_PROGRESS",
+          "title": "In Progress"
+        },
+        {
+          "id": "DONE",
+          "title": "Done"
+        },
+        {
+          "id": "CLOSED",
+          "title": "Closed"
+        }
+      ]
+    }
+  ],
+  "me": {
+    "id": "1",
+    "createdAt": "2021-02-06T18:30:57.479Z",
+    "name": "Abbey Howe",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hasslunsford/128.jpg"
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Task 1",
+      "description": "Task 1 description",
+      "board_id": "DEVELOPMENT",
+      "status": "BACKLOG",
+      "assignee": "3",
+      "index": 10
+    },
+    {
+      "id": "11",
+      "title": "Task 1",
+      "description": "Task 1 description",
+      "board_id": "DEVELOPMENT",
+      "status": "BACKLOG",
+      "assignee": "3",
+      "index": 20
+    },
+    {
+      "id": "2",
+      "title": "Task some task",
+      "description": "Task some task description",
+      "board_id": "DEVELOPMENT",
+      "status": "DONE",
+      "assignee": "2",
+      "index": 10
+    },
+    {
+      "id": "3",
+      "title": "Task 3",
+      "description": "Task some task description 3",
+      "board_id": "DEVELOPMENT",
+      "status": "DONE",
+      "assignee": "1",
+      "index": 20
+    },
+    {
+      "id": "4",
+      "title": "Task 4",
+      "description": "Task some task description 444",
+      "board_id": "DEVELOPMENT",
+      "status": "DONE",
+      "assignee": "1",
+      "index": 30
+    },
+    {
+      "id": "5",
+      "title": "Task 5",
+      "description": "5555",
+      "board_id": "DEVELOPMENT",
+      "status": "DONE",
+      "assignee": "1",
+      "index": 40
+    }
+  ]
+}

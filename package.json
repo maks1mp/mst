@@ -6,7 +6,13 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "json-server": "^0.16.3",
+    "mobx": "^6.1.5",
+    "mobx-react-lite": "^3.2.0",
+    "mobx-state-tree": "^5.0.1",
+    "query-string": "^6.13.8",
     "react": "^17.0.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
     "web-vitals": "^1.0.1"
