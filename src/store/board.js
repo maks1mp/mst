@@ -1,4 +1,4 @@
-import {applySnapshot, flow, getParent, types} from 'mobx-state-tree';
+import {getSnapshot, flow, getParent, types, onSnapshot, cast} from 'mobx-state-tree';
 import apiCall from '../api';
 import {User} from './users';
 
@@ -13,23 +13,8 @@ export const STATUSES = {
 const Task = types.model('Task', {
   id: types.identifier,
   title: types.string,
-  board_id: types.string,
-  status: types.string,
   description: types.maybe(types.string),
   assignee: types.safeReference(User),
-  index: types.number,
-}).actions(self => {
-  return {
-    move: flow(function* (payload) {
-      self.status = payload.status;
-      self.index = payload.index;
-
-      yield apiCall.put(`tasks/${self.id}`, {
-        ...self,
-        assignee: self.assignee.id,
-      });
-    })
-  }
 });
 
 const BoardSection = types.model('BoardSection', {
@@ -37,31 +22,28 @@ const BoardSection = types.model('BoardSection', {
   title: types.string,
   tasks: types.array(Task)
 })
-  .views(self => {
-    return {
-      get list() {
-        if (self.tasks) {
-          return self.tasks.sort((task1, task2) => task1.index - task2.index);
-        }
-
-        return [];
-      }
-    }
-  })
   .actions(self => {
-  return {
-    load: flow(function* () {
-      const {is: board_id} = getParent(self, 2);
-      const {id: status} = self;
+    return {
+      load: flow(function* () {
+        const {id: boardID} = getParent(self, 2);
+        const {id: status} = self;
+        const {tasks} = yield apiCall.get(`boards/${boardID}/tasks/${status}`);
 
-      self.tasks = yield apiCall.get('tasks', { board_id, status });
+        self.tasks = cast(tasks);
 
-    }),
-    afterCreate() {
-      self.load();
-    }
-  };
-})
+        onSnapshot(self, self.save);
+      }),
+      afterCreate() {
+        self.load();
+      },
+      save: flow(function* ({tasks}) {
+        const {id: boardID} = getParent(self, 2);
+        const {id: status} = self;
+
+        yield apiCall.put(`boards/${boardID}/tasks/${status}`, {tasks});
+      })
+    };
+  });
 
 const Board = types.model('Board', {
   id: types.identifier,
@@ -84,24 +66,14 @@ const BoardStore = types.model('BoardStore', {
     selectBoard(id) {
       self.active = id;
     },
-    moveTask(source, destination) {
-      console.log(source, destination);
-
+    moveTask(taskId, source, destination) {
       const fromSection = self.active.sections.find(section => section.id === source.droppableId);
-      const taskToMove = fromSection.tasks.find(task => task.index === source.index);
       const toSection = self.active.sections.find(section => section.id === destination.droppableId);
-      const toSectionTasks = toSection.tasks.toJSON();
 
-      // let newPosition = destination.index - 1;
+      const taskToMoveIndex = fromSection.tasks.findIndex(task => task.id === taskId);
+      const [task] = fromSection.tasks.splice(taskToMoveIndex, 1);
 
-      // while () {
-      //   newPosition--;
-      // }
-
-      // taskToMove.move({
-      //   status: destination.droppableId,
-      //   index: newPosition
-      // });
+      toSection.tasks.splice(destination.index, 0, task.toJSON());
     }
   }
 })

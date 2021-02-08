@@ -121,60 +121,135 @@
     "name": "Abbey Howe",
     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hasslunsford/128.jpg"
   },
-  "tasks": [
+  "board_main_tasks": [
     {
-      "id": "1",
-      "title": "Task 1",
-      "description": "Task 1 description",
-      "board_id": "DEVELOPMENT",
-      "status": "BACKLOG",
-      "assignee": "3",
-      "index": 10
+      "id": "BACKLOG",
+      "tasks": [
+        {
+          "id": "1111",
+          "title": "Task 1",
+          "description": "Task 1 description",
+          "assignee": "3"
+        },
+        {
+          "id": "11",
+          "title": "Task 1",
+          "description": "Task 1 description",
+          "assignee": "3"
+        }
+      ]
     },
     {
-      "id": "11",
-      "title": "Task 1",
-      "description": "Task 1 description",
-      "board_id": "DEVELOPMENT",
-      "status": "BACKLOG",
-      "assignee": "3",
-      "index": 20
+      "id": "OPEN",
+      "tasks": [
+        {
+          "id": "2",
+          "title": "Task 2",
+          "description": "Task some task description 3",
+          "assignee": "1"
+        }
+      ]
     },
     {
-      "id": "2",
-      "title": "Task some task",
-      "description": "Task some task description",
-      "board_id": "DEVELOPMENT",
-      "status": "DONE",
-      "assignee": "2",
-      "index": 10
+      "id": "IN_PROGRESS",
+      "tasks": [
+        {
+          "id": "3",
+          "title": "Task 3",
+          "description": "Task some task description 444",
+          "assignee": "1"
+        },
+        {
+          "id": "4",
+          "title": "Task 4",
+          "description": "5555",
+          "assignee": "1"
+        }
+      ]
     },
     {
-      "id": "3",
-      "title": "Task 3",
-      "description": "Task some task description 3",
-      "board_id": "DEVELOPMENT",
-      "status": "DONE",
-      "assignee": "1",
-      "index": 20
+      "id": "DONE",
+      "tasks": [
+        {
+          "id": "1",
+          "title": "Task some task",
+          "description": "Task some task description",
+          "assignee": "2"
+        }
+      ]
     },
     {
-      "id": "4",
-      "title": "Task 4",
-      "description": "Task some task description 444",
-      "board_id": "DEVELOPMENT",
-      "status": "DONE",
-      "assignee": "1",
-      "index": 30
+      "id": "CLOSED",
+      "tasks": [
+        {
+          "id": "22",
+          "title": "Task 2",
+          "description": "Task some task description 3",
+          "assignee": "1"
+        }
+      ]
+    }
+  ],
+  "board_development_tasks": [
+    {
+      "tasks": [
+        {
+          "id": "2",
+          "title": "Task 2",
+          "description": "Task some task description 3"
+        }
+      ],
+      "id": "BACKLOG"
     },
     {
-      "id": "5",
-      "title": "Task 5",
-      "description": "5555",
-      "board_id": "DEVELOPMENT",
-      "status": "DONE",
-      "assignee": "1",
-      "index": 40
+      "tasks": [
+        {
+          "id": "11",
+          "title": "Task 1",
+          "description": "Task 1 description"
+        }
+      ],
+      "id": "OPEN"
+    },
+    {
+      "tasks": [
+        {
+          "id": "1",
+          "title": "Task some task",
+          "description": "Task some task description"
+        },
+        {
+          "id": "3",
+          "title": "Task 3",
+          "description": "Task some task description 444"
+        }
+      ],
+      "id": "IN_PROGRESS"
+    },
+    {
+      "tasks": [
+        {
+          "id": "4",
+          "title": "Task 4",
+          "description": "5555"
+        }
+      ],
+      "id": "DONE"
+    },
+    {
+      "tasks": [
+        {
+          "id": "22",
+          "title": "Task 2",
+          "description": "Task some task description 3"
+        },
+        {
+          "id": "1111",
+          "title": "Task 1",
+          "description": "Task 1 description"
+        }
+      ],
+      "id": "CLOSED"
     }
   ]
 }

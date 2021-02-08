@@ -1,0 +1,6 @@
+{
+  "/boards/MAIN/tasks/:id": "/board_main_tasks/:id",
+  "/boards/DEVELOPMENT/tasks/:id": "/board_development_tasks/:id",
+  "/boards/MAIN/tasks": "/board_main_tasks/",
+  "/boards/DEVELOPMENT/tasks": "/board_development_tasks/"
+}
