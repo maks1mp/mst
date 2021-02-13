@@ -4,61 +4,61 @@
       "id": "1",
       "createdAt": "2021-02-06T18:30:57.479Z",
       "name": "Abbey Howe",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hasslunsford/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
       "id": "2",
       "createdAt": "2021-02-06T12:45:17.283Z",
       "name": "Kyla Balistreri",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/aaronalfred/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
       "id": "3",
       "createdAt": "2021-02-06T18:56:16.684Z",
       "name": "Zachariah Lebsack",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/yalozhkin/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/46.jpg"
     },
     {
       "id": "4",
       "createdAt": "2021-02-06T15:30:24.161Z",
       "name": "Ryleigh Powlowski",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dgajjar/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/97.jpg"
     },
     {
       "id": "5",
       "createdAt": "2021-02-06T20:53:27.474Z",
       "name": "Enid Ruecker",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/Shriiiiimp/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/women/63.jpg"
     },
     {
       "id": "6",
       "createdAt": "2021-02-06T14:09:07.467Z",
       "name": "Benny Metz",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nandini_m/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/86.jpg"
     },
     {
       "id": "7",
       "createdAt": "2021-02-06T15:33:39.554Z",
       "name": "Friedrich Runolfsson III",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mhaligowski/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/89.jpg"
     },
     {
       "id": "8",
       "createdAt": "2021-02-06T14:40:54.557Z",
       "name": "Antonina Blanda",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mkginfo/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/men/102.jpg"
     },
     {
       "id": "9",
       "createdAt": "2021-02-06T21:42:23.045Z",
       "name": "Liliane Friesen",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/joki4/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/women/41.jpg"
     },
     {
       "id": "10",
       "createdAt": "2021-02-07T12:13:19.029Z",
       "name": "Eliane Olson",
-      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/michaelabehsera/128.jpg"
+      "avatar": "https://randomuser.me/api/portraits/women/12.jpg"
     }
   ],
   "boards": [
@@ -119,11 +119,10 @@
     "id": "1",
     "createdAt": "2021-02-06T18:30:57.479Z",
     "name": "Abbey Howe",
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hasslunsford/128.jpg"
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
   },
   "board_main_tasks": [
     {
-      "id": "BACKLOG",
       "tasks": [
         {
           "id": "1111",
@@ -132,71 +131,10 @@
           "assignee": "3"
         },
         {
-          "id": "11",
-          "title": "Task 1",
-          "description": "Task 1 description",
-          "assignee": "3"
-        }
-      ]
-    },
-    {
-      "id": "OPEN",
-      "tasks": [
-        {
-          "id": "2",
-          "title": "Task 2",
-          "description": "Task some task description 3",
+          "id": "ce2eb823-9dbe-4aa5-897f-dae73b89ca56",
+          "title": "asd",
+          "description": "asd",
           "assignee": "1"
-        }
-      ]
-    },
-    {
-      "id": "IN_PROGRESS",
-      "tasks": [
-        {
-          "id": "3",
-          "title": "Task 3",
-          "description": "Task some task description 444",
-          "assignee": "1"
-        },
-        {
-          "id": "4",
-          "title": "Task 4",
-          "description": "5555",
-          "assignee": "1"
-        }
-      ]
-    },
-    {
-      "id": "DONE",
-      "tasks": [
-        {
-          "id": "1",
-          "title": "Task some task",
-          "description": "Task some task description",
-          "assignee": "2"
-        }
-      ]
-    },
-    {
-      "id": "CLOSED",
-      "tasks": [
-        {
-          "id": "22",
-          "title": "Task 2",
-          "description": "Task some task description 3",
-          "assignee": "1"
-        }
-      ]
-    }
-  ],
-  "board_development_tasks": [
-    {
-      "tasks": [
-        {
-          "id": "2",
-          "title": "Task 2",
-          "description": "Task some task description 3"
         }
       ],
       "id": "BACKLOG"
@@ -204,12 +142,76 @@
     {
       "tasks": [
         {
-          "id": "11",
-          "title": "Task 1",
-          "description": "Task 1 description"
+          "id": "4",
+          "title": "Task 4",
+          "description": "5555",
+          "assignee": "1"
+        },
+        {
+          "id": "5f905127-06c2-439a-b533-5f3b8495d9ad",
+          "title": "User",
+          "description": "asd",
+          "assignee": "9"
+        },
+        {
+          "id": "1",
+          "title": "Task some task",
+          "description": "Task some task description",
+          "assignee": "2"
         }
       ],
       "id": "OPEN"
+    },
+    {
+      "tasks": [
+        {
+          "id": "2",
+          "title": "Task 2",
+          "description": "Task some task description 3",
+          "assignee": "1"
+        },
+        {
+          "id": "22",
+          "title": "Task 2",
+          "description": "Task some task description 3",
+          "assignee": "1"
+        }
+      ],
+      "id": "IN_PROGRESS"
+    },
+    {
+      "tasks": [
+        {
+          "id": "11",
+          "title": "Task 1",
+          "description": "Task 1 description",
+          "assignee": "3"
+        }
+      ],
+      "id": "DONE"
+    },
+    {
+      "tasks": [
+        {
+          "id": "3",
+          "title": "Task 3",
+          "description": "Task some task description 444",
+          "assignee": "1"
+        }
+      ],
+      "id": "CLOSED"
+    }
+  ],
+  "board_development_tasks": [
+    {
+      "tasks": [
+        {
+          "id": "3",
+          "title": "Task 3",
+          "description": "Task some task description 444"
+        }
+      ],
+      "id": "BACKLOG"
     },
     {
       "tasks": [
@@ -219,12 +221,12 @@
           "description": "Task some task description"
         },
         {
-          "id": "3",
-          "title": "Task 3",
-          "description": "Task some task description 444"
+          "id": "2",
+          "title": "Task 2",
+          "description": "Task some task description 3"
         }
       ],
-      "id": "IN_PROGRESS"
+      "id": "OPEN"
     },
     {
       "tasks": [
@@ -234,19 +236,35 @@
           "description": "5555"
         }
       ],
+      "id": "IN_PROGRESS"
+    },
+    {
+      "tasks": [
+        {
+          "id": "11",
+          "title": "Task 1",
+          "description": "Task 1 description"
+        }
+      ],
       "id": "DONE"
     },
     {
       "tasks": [
         {
-          "id": "22",
-          "title": "Task 2",
-          "description": "Task some task description 3"
-        },
-        {
           "id": "1111",
           "title": "Task 1",
           "description": "Task 1 description"
+        },
+        {
+          "id": "ee1dc27c-36fc-4a7b-a93e-79b392f02818",
+          "title": "User",
+          "description": "descr",
+          "assignee": "10"
+        },
+        {
+          "id": "22",
+          "title": "Task 2",
+          "description": "Task some task description 3"
         }
       ],
       "id": "CLOSED"

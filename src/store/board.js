@@ -1,14 +1,7 @@
-import {getSnapshot, flow, getParent, types, onSnapshot, cast} from 'mobx-state-tree';
+import {flow, getParent, types, onSnapshot, cast} from 'mobx-state-tree';
+import { v4 as uuidv4 } from 'uuid';
 import apiCall from '../api';
 import {User} from './users';
-
-export const STATUSES = {
-  BACKLOG: 'BACKLOG',
-  OPEN: 'OPEN',
-  IN_PROGRESS: 'IN_PROGRESS',
-  DONE: 'DONE',
-  CLOSED: 'CLOSED',
-}
 
 const Task = types.model('Task', {
   id: types.identifier,
@@ -41,7 +34,10 @@ const BoardSection = types.model('BoardSection', {
         const {id: status} = self;
 
         yield apiCall.put(`boards/${boardID}/tasks/${status}`, {tasks});
-      })
+      }),
+      addTask(taskPayload) {
+        self.tasks.push(taskPayload);
+      }
     };
   });
 
@@ -49,7 +45,27 @@ const Board = types.model('Board', {
   id: types.identifier,
   title: types.string,
   sections: types.array(BoardSection)
-});
+}).actions(self => {
+  return {
+    addTask(sectionId, taskPayload) {
+      const section = self.sections.find(section => section.id === sectionId);
+
+      section.tasks.push({
+        id: uuidv4(),
+        ...taskPayload
+      });
+    },
+    moveTask(taskId, source, destination) {
+      const fromSection = self.sections.find(section => section.id === source.droppableId);
+      const toSection = self.sections.find(section => section.id === destination.droppableId);
+
+      const taskToMoveIndex = fromSection.tasks.findIndex(task => task.id === taskId);
+      const [task] = fromSection.tasks.splice(taskToMoveIndex, 1);
+
+      toSection.tasks.splice(destination.index, 0, task.toJSON());
+    },
+  }
+})
 
 const BoardStore = types.model('BoardStore', {
   active: types.safeReference(Board),
@@ -58,7 +74,6 @@ const BoardStore = types.model('BoardStore', {
   return {
     load: flow(function* () {
       self.boards = yield apiCall.get('boards');
-      self.active = 'DEVELOPMENT';
     }),
     afterCreate() {
       self.load();
@@ -66,15 +81,6 @@ const BoardStore = types.model('BoardStore', {
     selectBoard(id) {
       self.active = id;
     },
-    moveTask(taskId, source, destination) {
-      const fromSection = self.active.sections.find(section => section.id === source.droppableId);
-      const toSection = self.active.sections.find(section => section.id === destination.droppableId);
-
-      const taskToMoveIndex = fromSection.tasks.findIndex(task => task.id === taskId);
-      const [task] = fromSection.tasks.splice(taskToMoveIndex, 1);
-
-      toSection.tasks.splice(destination.index, 0, task.toJSON());
-    }
   }
 })
 

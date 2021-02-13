@@ -1,15 +1,20 @@
 import {observer} from 'mobx-react-lite';
+import CardContent from '@material-ui/core/CardContent';
+import {Typography} from '@material-ui/core';
+import User from '../common/User';
 
-const Task = (({task}) => {
+function Task({task}) {
   return (
-    <div>
-      {task.id}
-      <br/>
-      {task.title}
-      <br/>
-      {task.description}
-    </div>
+    <CardContent>
+      <Typography color="textPrimary" gutterBottom style={{fontSize: 18}}>
+        {task.title}
+      </Typography>
+      <Typography color="textSecondary" gutterBottom>
+        {task.description}
+      </Typography>
+      <User user={task.assignee} />
+    </CardContent>
   );
-})
+}
 
 export default observer(Task);

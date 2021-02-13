@@ -1,9 +1,11 @@
-import {useCallback} from 'react';
+import {useCallback, useState} from 'react';
 import {observer} from 'mobx-react-lite'
-import useStore from '../../hooks/useStore'
+import {Paper, Grid, Typography, Button} from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 import {DragDropContext, Droppable} from 'react-beautiful-dnd';
 import Column from './Column';
-import './index.css';
+import useStore from '../../hooks/useStore'
+import NewTaskDialog from './NewTaskDialog';
 
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : 'lightgrey',
@@ -13,36 +15,53 @@ const getListStyle = isDraggingOver => ({
 
 function Dashboard() {
   const {boards} = useStore();
+  const [newTaskTo, setNewTask] = useState(null)
+
+  const closeDialog = useCallback(() => {
+    setNewTask(null);
+  }, [setNewTask])
 
   const onDragEnd = useCallback(event => {
     const {source, destination, draggableId: taskId} = event;
 
-    boards.moveTask(taskId, source, destination);
-  }, [boards])
+    boards.active.moveTask(taskId, source, destination);
+  }, [boards]);
 
   return (
-    <div className="dashboard">
+    <Box p={2}>
       <DragDropContext onDragEnd={onDragEnd}>
-        {boards?.active?.sections.map(section => {
-          return (
-            <div className="dashboard-column">
-              <h1>{section.title}</h1>
-              <Droppable droppableId={section.id} key={section.id}>
-                {(provided, snapshot) => (
-                  <div
-                    {...provided.droppableProps}
-                    ref={provided.innerRef}
-                    style={getListStyle(snapshot.isDraggingOver)}>
-                    <Column section={section}/>
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </div>
-          )
-        })}
+        <Grid container spacing={3}>
+          {boards?.active?.sections.map(section => {
+            return (
+              <Grid item key={section.id} xs>
+                <Paper>
+                  <Box p={1} display="flex" alignItems="center" justifyContent="space-between">
+                    <Typography variant='h4'>{section.title}</Typography>
+                    <Button variant="outlined" color="primary" onClick={() => {
+                      setNewTask(section.id);
+                    }}>
+                      ADD
+                    </Button>
+                  </Box>
+                  <Droppable droppableId={section.id} key={section.id}>
+                    {(provided, snapshot) => (
+                      <div
+                        {...provided.droppableProps}
+                        ref={provided.innerRef}
+                        style={getListStyle(snapshot.isDraggingOver)}>
+                          <Column section={section}/>
+                        {provided.placeholder}
+                      </div>
+                    )}
+                  </Droppable>
+                </Paper>
+              </Grid>
+            )
+          })}
+        </Grid>
       </DragDropContext>
-    </div>
+      <NewTaskDialog open={!!newTaskTo} sectionId={newTaskTo} handleClose={closeDialog}/>
+    </Box>
   );
 }
 

@@ -1,20 +1,12 @@
 import {observer} from 'mobx-react-lite';
 import {Draggable} from 'react-beautiful-dnd';
 import Task from './Task';
-
-const grid = 8;
+import Card from '@material-ui/core/Card';
 
 const getItemStyle = (isDragging, draggableStyle) => {
   return {
-    // some basic styles to make the items look a bit nicer
-    userSelect: 'none',
-    padding: grid * 2,
-    margin: `0 0 ${grid}px 0`,
-
-    // change background colour if dragging
-    background: isDragging ? 'lightgreen' : 'grey',
-
-    // styles we need to apply on draggables
+    padding: 8,
+    marginBottom: 8,
     ...draggableStyle
   };
 };
@@ -26,7 +18,7 @@ const Column = ({section}) => {
         return (
           <Draggable draggableId={task.id} key={task.id} index={index}>
             {(provided, snapshot) => (
-              <div
+              <Card
                 ref={provided.innerRef}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
@@ -36,7 +28,7 @@ const Column = ({section}) => {
                 )}
               >
                 <Task task={task}/>
-              </div>
+              </Card>
             )}
           </Draggable>
         )
