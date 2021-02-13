@@ -36,7 +36,7 @@ function Dashboard() {
               <Grid item key={section.id} xs>
                 <Paper>
                   <Box p={1} display="flex" alignItems="center" justifyContent="space-between">
-                    <Typography variant='h4'>{section.title}</Typography>
+                    <Typography variant='h5'>{section.title}</Typography>
                     <Button variant="outlined" color="primary" onClick={() => {
                       setNewTask(section.id);
                     }}>

@@ -148,12 +148,6 @@
           "assignee": "1"
         },
         {
-          "id": "5f905127-06c2-439a-b533-5f3b8495d9ad",
-          "title": "User",
-          "description": "asd",
-          "assignee": "9"
-        },
-        {
           "id": "1",
           "title": "Task some task",
           "description": "Task some task description",
@@ -197,6 +191,12 @@
           "title": "Task 3",
           "description": "Task some task description 444",
           "assignee": "1"
+        },
+        {
+          "id": "5f905127-06c2-439a-b533-5f3b8495d9ad",
+          "title": "User",
+          "description": "asd",
+          "assignee": "9"
         }
       ],
       "id": "CLOSED"
